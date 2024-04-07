@@ -6,7 +6,7 @@ const cors = require('cors')
 const app = express()
 app.use(cors({
     credentials: true, // Allows cookies to be sent from client to server
-    origin: 'http://krgrecruitments.s3-website.ap-south-1.amazonaws.com', // Whitelist the origin of your frontend application
+    origin: 'http://www.krgdataresearch.org.s3-website.ap-south-1.amazonaws.com', // Whitelist the origin of your frontend application
   }));
   
 app.use(express.json())
