@@ -13,7 +13,7 @@ function Login2() {
     e.preventDefault();
     
     try {
-      const response = await axios.post('https://98aahkbf28.ap-south-1.awsapprunner.com/login', {
+      const response = await axios.post('https://kvnca3jyip.ap-south-1.awsapprunner.com/login', {
         email: email,
         password: password
       });

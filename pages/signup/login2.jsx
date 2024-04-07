@@ -31,7 +31,7 @@ function Login2() {
 
     try {
       // Send POST request to backend to save email and password
-      const response = await axios.post('https://98aahkbf28.ap-south-1.awsapprunner.com/register', {email: values.email, password: values.password});
+      const response = await axios.post('https://kvnca3jyip.ap-south-1.awsapprunner.com/register', {email: values.email, password: values.password});
       console.log(values.email, values.password)
       console.log(response.data);
       window.alert("Account created successfully. Please proceed to registration.");
