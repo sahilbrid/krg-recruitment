@@ -18,9 +18,9 @@ app.use(session({
 }));
 
 const db = mysql.createConnection({
-    host: 'krg-db.chk26aioonln.eu-north-1.rds.amazonaws.com',
-    user: 'root',
-    password: '12345678',
+    host: 'krgrecruitmentdb.cdo6ua2eqsk6.ap-south-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'testing123',
     database: 'krg'
 })
 
