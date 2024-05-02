@@ -18,12 +18,12 @@ function Login2() {
         password: password
       });
       
-      console.log(response.data); // Handle successful login
+      // console.log(response.data); // Handle successful login
       // Redirect user or perform other actions upon successful login
       window.alert("Login Successfull!")
       document.getElementById('login-link').click();
     } catch (error) {
-      console.error('Error logging in:', error.response.data.error);
+      // console.error('Error logging in:', error.response.data.error);
       alert("Invalid Email or Password!")
       // Display error message to the user
     }
