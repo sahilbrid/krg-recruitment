@@ -27,7 +27,7 @@ const SignUpForm = () => {
     //   return;
     // }
     e.preventDefault()
-    console.log('Form submitted')
+    // console.log('Form submitted')
     if (values.password !== values.confirmPassword) {
       alert("Passwords do not match. Please try again.");
       return;
@@ -36,13 +36,13 @@ const SignUpForm = () => {
     try {
       // Send POST request to backend to save email and password
       const response = await axios.post('http://localhost:5000/register', {email: values.email, password: values.password});
-      console.log(values.email, values.password)
-      console.log(response.data);
+      // console.log(values.email, values.password)
+      // console.log(response.data);
       window.alert("Account created successfully. Please proceed to registration.");
       document.getElementById('login-link').click();
       // history.push('/registration');
     } catch (error) {
-      console.error('Error creating account:', error);
+      // console.error('Error creating account:', error);
       alert("Error creating account. Please try again.");
     }
   
