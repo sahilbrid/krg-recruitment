@@ -30,24 +30,24 @@ app.post('/register', (req, res) => {
     const values = [email, password];
     db.query(sql, values, (err, result) => {
         if(err) {
-            console.error('Error registering user:', err);
+            // console.error('Error registering user:', err);
             if(err.code == 'ER_DUP_ENTRY'){
-                console.log('Account already exists!')
+               // console.log('Account already exists!')
             }
             return res.status(500).json({ error: 'Error registering user' });
         }
-        console.log('User registered successfully:', result);
+        // console.log('User registered successfully:', result);
         req.session.email = req.body.email;
-        console.log(req.session.email)
+        // console.log(req.session.email)
         var sess = req.session
-        console.log(sess)
+        // console.log(sess)
         return res.status(200).json({ message: 'User registered successfully' });
     });
 });
 
 app.post('/registration', (req, res) => {
-    console.log("Email to update", req.session.email)
-    console.log(req.body)
+    // console.log("Email to update", req.session.email)
+    // console.log(req.body)
     const {
         firstName,
         middleName,
@@ -64,7 +64,7 @@ app.post('/registration', (req, res) => {
         currentJobDesignation,
     } = req.body;
     const email1 = req.body.personalEmail
-    console.log("personal: ", email1)
+    // console.log("personal: ", email1)
 
     // if (!req.session.email) {
     //     return res.status(401).json({ error: 'Unauthorized' });
@@ -93,26 +93,26 @@ app.post('/registration', (req, res) => {
         email1,
     ];
 
-    console.log("SQL Query:", sql); // Log the SQL query being executed
-    console.log("Values:", values);
+    // console.log("SQL Query:", sql); // Log the SQL query being executed
+    // console.log("Values:", values);
 
     db.query(sql, values, (err, result) => {
         if(err) {
-            console.error('Error saving registration data:', err);
+            // console.error('Error saving registration data:', err);
             return res.status(500).json({ error: 'Error saving registration data' });
         }
-        console.log('Registration data saved successfully:', result);
+        // console.log('Registration data saved successfully:', result);
         return res.status(200).json({ message: 'Registration data saved successfully' });
     });
 });
 
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
-    console.log(req.session)
+    // console.log(req.session)
     const sql = "SELECT * FROM user WHERE email = ?";
     db.query(sql, [email], (err, results) => {
         if (err) {
-            console.error('Error querying database:', err);
+            // console.error('Error querying database:', err);
             return res.status(500).json({ error: 'Internal server error' });
         }
         if (results.length === 0) {
