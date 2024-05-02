@@ -42,11 +42,11 @@ const RegistrationForm = () => {
     try {
       // Send POST request to backend to save registration data
       const response = await axios.post('https://kvnca3jyip.ap-south-1.awsapprunner.com/registration', values);
-      console.log(response.data);
+      // console.log(response.data);
       window.alert("Registered Successfully!");
       document.getElementById('login-link').click();
     } catch (error) {
-      console.error('Error saving registration data:', error);
+      // console.error('Error saving registration data:', error);
       alert("Error saving registration data. Please try again.");
     }
 
